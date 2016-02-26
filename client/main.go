@@ -50,7 +50,7 @@ func main() {
 			resp.Body.Close()
 		}
 		// Take a pause
-		// time.Sleep(time.Duration(50+r1.Intn(1000)) * time.Millisecond)
+		time.Sleep(time.Duration(50+r1.Intn(1000)) * time.Millisecond)
 		*requests--
 	}
 }

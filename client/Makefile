@@ -1,4 +1,4 @@
-TAG = v1
+TAG = v2
 
 client:	main.go
 		go get && go build -o $@

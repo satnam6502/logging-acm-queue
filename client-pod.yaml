@@ -5,4 +5,4 @@ metadata:
 spec:
   containers:
   - name: client-load
-    image: satnam6502/client:v1
+    image: satnam6502/client:v2
