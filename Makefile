@@ -26,5 +26,10 @@ redis-down:
 		-kubectl delete rc redis-slave
 		-kubectl delete service redis-slave
 
+client-up:
+		kubectl create -f client-pod.yaml
+client-down:
+		kubectl delete pod satnam-client
+
 get:
-		kubectl get pods,rc,service 
+		kubectl get pods,rc,service

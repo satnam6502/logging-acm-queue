@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: satnam-client
+spec:
+  containers:
+  - name: client-load
+    image: satnam6502/client:v1

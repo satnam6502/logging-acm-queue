@@ -20,7 +20,7 @@ const (
 var (
 	redisMaster = flag.String("redis-master", "redis-master:6379", "address of redis master")
 	redisSlave  = flag.String("redis-slave", "redis-slave:6379", "address of redis slave")
-	frontend    = flag.String("frontend", ":3000", "frontend server")
+	frontend    = flag.String("frontend", "frontend:80", "frontend server")
 	requests    = flag.Int("requests", 10000, "number of requests to perform")
 )
 
