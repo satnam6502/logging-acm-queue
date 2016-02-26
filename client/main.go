@@ -35,17 +35,19 @@ func main() {
 			// perform a write
 			key := r1.Intn(keyrange)
 			value := r1.Intn(1000000)
-			_, err := client.Get(fmt.Sprintf("http://%s/rpush/k%d/v%d", *frontend, key, value))
+			resp, err := client.Get(fmt.Sprintf("http://%s/rpush/k%d/v%d", *frontend, key, value))
 			if err != nil {
 				log.Printf("Write failed: %v", err)
 			}
+			resp.Body.Close()
 		} else {
 			// perform a read
 			key := r1.Intn(keyrange)
-			_, err := client.Get(fmt.Sprintf("http://%s/lrange/k%d", *frontend, key))
+			resp, err := client.Get(fmt.Sprintf("http://%s/lrange/k%d", *frontend, key))
 			if err != nil {
 				log.Printf("Read failed: %v", err)
 			}
+			resp.Body.Close()
 		}
 		// Take a pause
 		time.Sleep(time.Duration(50+r1.Intn(1000)) * time.Millisecond)
