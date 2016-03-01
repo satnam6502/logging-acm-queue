@@ -33,3 +33,7 @@ client-down:
 
 get:
 		kubectl get pods,rc,service
+
+
+mysql:
+		mysql --local-infile --host=23.236.50.3 --user=root --password=wombat albums

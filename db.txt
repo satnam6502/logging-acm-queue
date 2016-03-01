@@ -1,0 +1,13 @@
+CREATE DATABASE albums;
+
+use albums;
+
+create table pop ( artist varchar(255), album varchar(255), inventory int, released year(4));
+
+show tables;
+
+insert into pop values('Pink Floyd', 'Dark Side of the Moon', 57, '1973');
+
+drop table pop;
+
+load data local infile 'pop.txt' into table pop;

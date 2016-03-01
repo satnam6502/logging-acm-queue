@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: albums-db
+  labels:
+    app: music1983
+    role: db
+    tier: backend
+spec:
+  containers:
+  - name: mysql
+    image: mysql:5.6
+    env:
+    - name: MYSQL_ROOT_PASSWORD
+      value: wombat
+    ports:
+    - containerPort: 3306
+    volumeMounts:
+    - name: mysql-persistent-storage
+      mountPath: /var/lib/mysql
+  volumes:
+  - name: mysql-persistent-storage
+    gcePersistentDisk:
+      pdName: albums-disk
+      fsType: ext4

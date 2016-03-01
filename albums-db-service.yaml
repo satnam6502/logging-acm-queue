@@ -1,15 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: redis-slave
+  name: albums
   labels:
     app: music1983
-    role: slave
-    tier: backend
 spec:
+  type: LoadBalancer
   ports:
-  - port: 6379
+  - port: 3306
   selector:
     app: music1983
-    role: slave
+    role: db
     tier: backend

@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: redis-master
   labels:
-    app: redis
+    app: music1983
     role: master
     tier: backend
 spec:
@@ -12,6 +12,6 @@ spec:
   - port: 6379
     targetPort: 6379
   selector:
-    app: redis
+    app: music1983
     role: master
     tier: backend
